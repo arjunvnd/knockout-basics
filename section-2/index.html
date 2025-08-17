@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section 2</title>
+  </head>
+  <body id="root">
+    <h1>Toy inventory</h1>
+    <h5 data-bind="visible: inventory().length > 0">
+      These are the dog toys you get
+    </h5>
+    <h5 data-bind="visible: inventory().length === 0">
+      Please click on the add button to start
+    </h5>
+    <button data-bind="click: addToy, disable: inventory().length >=4">
+      Add toy
+    </button>
+    <ul data-bind="foreach: inventory">
+      <li>
+        <span data-bind="text: name"></span>
+        <button
+          data-bind="click: $parent.removeToy, attr: {'item-index': $index}"
+        >
+          &times;
+        </button>
+      </li>
+    </ul>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+
+  <script src="./script.js"></script>
+</html>
