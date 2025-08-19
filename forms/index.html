@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body id="root">
+    <h1>Get membership to dog world</h1>
+    <h3>Register Now</h3>
+
+    <form data-bind="submit:handleSubmit">
+      <label for="name">Enter Name</label>
+      <input type="text" name="name" id="name" data-bind="value:name" />
+      <label for="email">Enter Email</label>
+      <input type="text" name="email" id="email" data-bind="value: email" />
+      <label for="typeOfMemberShip">Membership type</label>
+      <select
+        name="typeOfMemberShip"
+        id="typeOfMemberShip"
+        data-bind="value:typeOfMemberShip"
+      >
+        <option value="basic">Basic</option>
+        <option value="pro">Pro</option>
+        <option value="proMax">Pro Max</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout-validation/2.0.4/knockout.validation.min.js"></script>
+
+  <script src="./script.js"></script>
+</html>
