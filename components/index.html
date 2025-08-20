@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="root">
+    <h1 data-bind="text: heading()"></h1>
+    <ul data-bind="foreach: listOfItem">
+      <li data-bind="text: $data"></li>
+    </ul>
+    <loading-button
+      params="buttonText: 'Click here to get the list of item from params', handleClick: getData, afterClick: setData"
+    ></loading-button>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+  <script src="./script.js"></script>
+</html>
